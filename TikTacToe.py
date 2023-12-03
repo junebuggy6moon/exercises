@@ -68,22 +68,26 @@ def print_board():
 #ask player2 to enter in coordinate
 #they can't overwrite each other
 #use a while loop if no one is wining then keep looping until someone does or tie.
+
+player = "P1"
 while who_won() == "Nobody":
     print_board()
-    answer1 = input("Player 1, please enter a coordinate from each.")
-    answer2 = input("Player 2, please enter a coordinate from each.")
 
-    answer1_h = int(answer1.split(",")[0]) -1
-    answer1_v = int(answer1.split(",")[1]) -1
+    answer = input(f"{player}, please enter a coordinate from each.")
 
-    game[answer1_h][answer1_v] = 1
+    answer_h = int(answer.split(",")[0]) -1
+    answer_v = int(answer.split(",")[1]) -1
 
-    answer2_h = int(answer2.split(",")[0]) -1
-    answer2_v = int(answer2.split(",")[1]) -1
+    if player == "P1":
+        game[answer_h][answer_v] = 1
+    elif player == "P2":
+        game[answer_h][answer_v] = 2
 
-    game[answer2_h][answer2_v] = 2
+    if player == "P1":
+        player = "P2"
+    elif player == "P2":
+        player = "P1"
 
 if who_won() == "P1" or who_won() == "P2":
     print(f"{who_won()} you won!")
     print_board()
-
