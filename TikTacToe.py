@@ -64,10 +64,6 @@ def print_board():
         vertical(size, v)
         horizontal(size)
 
-#ask player1 to enter in coordinate
-#ask player2 to enter in coordinate
-#they can't overwrite each other
-#use a while loop if no one is wining then keep looping until someone does or tie.
 
 player = "P1"
 while who_won() == "Nobody":
