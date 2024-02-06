@@ -1,12 +1,13 @@
 game = [[0, 0, 0],
-	    [0, 0, 0],
-	    [0, 0, 0]]
+	[0, 0, 0],
+	[0, 0, 0]]
 
 def vertical(size, v):
     vertical_line = "|"
     for h in range(size):
         vertical_line += f" {game[v][h]} |"
     print(vertical_line)
+	
 def who_won():
     if game[0][0] == game[0][1] == game[0][2] == 1:
         return("P1")
@@ -63,7 +64,6 @@ def print_board():
     for v in range(size):
         vertical(size, v)
         horizontal(size)
-
 
 player = "P1"
 while who_won() == "Nobody":
